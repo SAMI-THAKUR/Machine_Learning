@@ -1,4 +1,5 @@
 ## RidgeRegression
+![image](https://github.com/SAMI-THAKUR/Machine_Learning/assets/118300788/7c86f3c5-340f-4e8f-af7f-84da75b5ffca)
 
 ### Initialization (`__init__`):
 
