@@ -1,4 +1,5 @@
 ## LinearRegression (using Gradient Descent)
+![image](https://github.com/SAMI-THAKUR/Machine_Learning/assets/118300788/a9763030-09b4-4b5b-818e-a79c0bf68ec5)
 
 ### Initialization (`__init__`):
 
