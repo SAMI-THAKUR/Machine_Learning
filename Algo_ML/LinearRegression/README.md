@@ -53,6 +53,7 @@ def predict(self, X):
 - Finally, it returns the predicted target values.
 
 ## LinearRegression (using Normal Equation)
+![image](https://github.com/SAMI-THAKUR/Machine_Learning/assets/118300788/91fe98f0-48fb-40ce-85fd-cdf36212dcde)
 
 ### Initialization (`__init__`):
 
