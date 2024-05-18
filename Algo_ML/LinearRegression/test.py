@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 import numpy as np
-from LinearRegression import Linear_Regression
+from LinearRegression import LinearRegression_GradientDescent as Linear_Regression
 
 url = "https://drive.google.com/file/d/1VD06DjyGegNAWdJxFqKW-BtNsSbZsbez/view?usp=drive_link"
 url = 'https://drive.google.com/uc?id=' + url.split('/')[-2]

@@ -50,3 +50,50 @@ def predict(self, X):
 - The `predict` method is used to make predictions using the trained linear regression model. It takes one argument: `X`, representing the feature matrix of new data points.
 - It computes the predicted target values by performing matrix multiplication between the feature matrix `X` and the weights, and then adding the bias term.
 - Finally, it returns the predicted target values.
+
+## LinearRegression (using Normal Equation)
+
+### Initialization (`__init__`):
+
+```python
+def __init__(self):
+    self.intercept_ = None
+    self.coef_ = None
+```
+
+- The `__init__` method initializes the `LinearRegression` object. It sets `intercept_` and `coef_` attributes to `None`, which will later store the intercept and coefficients of the linear regression model.
+
+### Fit Method (`fit`):
+
+```python
+def fit(self, X, y):
+    # Add intercept term to X
+    X = np.concatenate((np.ones((X.shape[0], 1)), X), axis=1)
+
+    # Calculate theta using the normal equation
+    theta = np.linalg.inv(X.T.dot(X)).dot(X.T).dot(y)
+    self.intercept_ = theta[0]
+    self.coef_ = theta[1:]
+```
+
+- The `fit` method is used to train the linear regression model. It takes two arguments: `X`, representing the feature matrix, and `y`, representing the target vector.
+- Inside this method:
+  - It adds a column of ones (representing the intercept term) to the feature matrix `X` by concatenating it along the columns.
+  - It calculates the parameters (`theta`) using the normal equation: \(\theta = (X^T X)^{-1} X^T y\), where `@` represents matrix multiplication, `T` denotes matrix transpose, and `inv` is the matrix inverse function from NumPy.
+  - It assigns the intercept term (`theta[0]`) to the `intercept_` attribute and the coefficients (`theta[1:]`) to the `coef_` attribute.
+
+### Predict Method (`predict`):
+
+```python
+def predict(self, X):
+    # Add intercept term to X
+    X = np.concatenate((np.ones((X.shape[0], 1)), X), axis=1)
+
+    return X.dot(np.concatenate(([self.intercept_], self.coef_)))
+```
+
+- The `predict` method is used to make predictions using the trained linear regression model. It takes one argument: `X`, representing the feature matrix of new data points.
+- Inside this method:
+  - It adds a column of ones (representing the intercept term) to the feature matrix `X` by concatenating it along the columns.
+  - It computes the predicted target values by performing matrix multiplication between the feature matrix `X` and the concatenated array of intercept and coefficients.
+- Finally, it returns the predicted target values.
